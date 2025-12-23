@@ -1,0 +1,404 @@
+{
+  "version": "1.1.0",
+  "updated": "2025-12-04T00:00:00Z",
+  "downloadBase": "https://github.com/prompt-stack/runtimes/releases/download/v1.1.0",
+  "runtimes": {
+    "node": {
+      "id": "node",
+      "name": "Node.js",
+      "version": "20.10.0",
+      "category": "core",
+      "description": "JavaScript runtime for agents and stacks",
+      "bundled": true,
+      "binary": "node/bin/node",
+      "download": {
+        "darwin-arm64": "node-20.10.0-darwin-arm64.tar.gz",
+        "darwin-x64": "node-20.10.0-darwin-x64.tar.gz",
+        "linux-x64": "node-20.10.0-linux-x64.tar.gz",
+        "linux-arm64": "node-20.10.0-linux-arm64.tar.gz"
+      }
+    },
+    "ripgrep": {
+      "id": "ripgrep",
+      "name": "ripgrep",
+      "version": "14.0",
+      "category": "tool",
+      "description": "Fast text search",
+      "bundled": true,
+      "binary": {
+        "darwin-arm64": "ripgrep/arm64/rg",
+        "darwin-x64": "ripgrep/x64/rg"
+      },
+      "download": {
+        "darwin-arm64": "ripgrep-14.0-darwin-arm64.tar.gz",
+        "darwin-x64": "ripgrep-14.0-darwin-x64.tar.gz"
+      }
+    },
+    "python": {
+      "id": "python",
+      "name": "Python",
+      "version": "3.12",
+      "category": "core",
+      "description": "Python runtime with data/ML packages (pandas, numpy, openai, anthropic)",
+      "bundled": false,
+      "binary": "python/bin/python3",
+      "download": {
+        "darwin-arm64": "python-3.12-darwin-arm64.tar.gz",
+        "darwin-x64": "python-3.12-darwin-x64.tar.gz"
+      }
+    },
+    "deno": {
+      "id": "deno",
+      "name": "Deno",
+      "version": "1.40",
+      "category": "core",
+      "description": "Secure JavaScript/TypeScript runtime",
+      "bundled": false,
+      "binary": "deno/deno",
+      "download": {
+        "darwin-arm64": "deno-1.40-darwin-arm64.tar.gz",
+        "darwin-x64": "deno-1.40-darwin-x64.tar.gz"
+      }
+    },
+    "bun": {
+      "id": "bun",
+      "name": "Bun",
+      "version": "1.0",
+      "category": "core",
+      "description": "Fast JavaScript runtime and package manager",
+      "bundled": false,
+      "binary": "bun/bun",
+      "download": {
+        "darwin-arm64": "bun-1.0-darwin-arm64.tar.gz",
+        "darwin-x64": "bun-1.0-darwin-x64.tar.gz"
+      }
+    },
+    "claude": {
+      "id": "claude",
+      "name": "Claude Code",
+      "version": "latest",
+      "category": "agent",
+      "description": "Anthropic Claude Code CLI",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "@anthropic-ai/claude-code",
+      "binary": "agents/claude/node_modules/.bin/claude",
+      "installDir": "agents/claude",
+      "requiresAuth": true,
+      "authInstructions": "Run 'claude login' to authenticate with your Anthropic account"
+    },
+    "codex": {
+      "id": "codex",
+      "name": "OpenAI Codex",
+      "version": "latest",
+      "category": "agent",
+      "description": "OpenAI Codex CLI",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "@openai/codex",
+      "binary": "agents/codex/node_modules/.bin/codex",
+      "installDir": "agents/codex",
+      "requiresAuth": true,
+      "authInstructions": "Run 'codex auth' to authenticate with your OpenAI account"
+    },
+    "gemini": {
+      "id": "gemini",
+      "name": "Gemini CLI",
+      "version": "latest",
+      "category": "agent",
+      "description": "Google Gemini CLI",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "@google/gemini-cli",
+      "binary": "agents/gemini/node_modules/.bin/gemini",
+      "installDir": "agents/gemini",
+      "requiresAuth": true,
+      "authInstructions": "Run 'gemini' to authenticate with your Google account"
+    },
+    "copilot": {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "version": "latest",
+      "category": "agent",
+      "description": "GitHub Copilot CLI",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "@githubnext/github-copilot-cli",
+      "binary": "agents/copilot/node_modules/.bin/github-copilot-cli",
+      "installDir": "agents/copilot",
+      "requiresAuth": true,
+      "authInstructions": "Run 'github-copilot-cli auth' to authenticate with GitHub"
+    },
+    "ollama": {
+      "id": "ollama",
+      "name": "Ollama",
+      "version": "0.5",
+      "category": "agent",
+      "description": "Run local LLMs (Llama, Mistral, CodeLlama, etc.)",
+      "bundled": false,
+      "binary": "ollama/ollama",
+      "download": {
+        "darwin-arm64": "ollama-0.5-darwin-arm64.tar.gz",
+        "darwin-x64": "ollama-0.5-darwin-x64.tar.gz"
+      }
+    },
+    "git": {
+      "id": "git",
+      "name": "Git",
+      "version": "2.43",
+      "category": "tool",
+      "description": "Version control for cloning repos and stacks",
+      "bundled": false,
+      "binary": "git/bin/git",
+      "download": {
+        "darwin-arm64": "git-2.43-darwin-arm64.tar.gz",
+        "darwin-x64": "git-2.43-darwin-x64.tar.gz"
+      },
+      "fallbackCheck": "git --version",
+      "fallbackInstructions": "Or use system git: xcode-select --install"
+    },
+    "ffmpeg": {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "version": "6.0",
+      "category": "tool",
+      "description": "Audio/video processing",
+      "bundled": false,
+      "binary": "ffmpeg/ffmpeg",
+      "download": {
+        "darwin-arm64": "ffmpeg-6.0-darwin-arm64.tar.gz",
+        "darwin-x64": "ffmpeg-6.0-darwin-x64.tar.gz"
+      }
+    },
+    "imagemagick": {
+      "id": "imagemagick",
+      "name": "ImageMagick",
+      "version": "7.1",
+      "category": "tool",
+      "description": "Image processing",
+      "bundled": false,
+      "binary": "imagemagick/magick",
+      "download": {
+        "darwin-arm64": "imagemagick-7.1-darwin-arm64.tar.gz",
+        "darwin-x64": "imagemagick-7.1-darwin-x64.tar.gz"
+      }
+    },
+    "pandoc": {
+      "id": "pandoc",
+      "name": "Pandoc",
+      "version": "3.5",
+      "category": "tool",
+      "description": "Document conversion (markdown, docx, pdf)",
+      "bundled": false,
+      "binary": "pandoc/pandoc",
+      "download": {
+        "darwin-arm64": "pandoc-3.5-darwin-arm64.tar.gz",
+        "darwin-x64": "pandoc-3.5-darwin-x64.tar.gz"
+      }
+    },
+    "chromium": {
+      "id": "chromium",
+      "name": "Chromium",
+      "version": "131",
+      "category": "tool",
+      "description": "Browser automation for Puppeteer/Playwright",
+      "bundled": false,
+      "binary": "chromium/Chromium.app/Contents/MacOS/Chromium",
+      "format": "zip",
+      "download": {
+        "darwin-arm64": "chromium-131-darwin-arm64.zip",
+        "darwin-x64": "chromium-131-darwin-x64.zip"
+      }
+    },
+    "jq": {
+      "id": "jq",
+      "name": "jq",
+      "version": "1.7",
+      "category": "tool",
+      "description": "JSON processor for parsing API responses",
+      "bundled": false,
+      "binary": "jq/jq",
+      "download": {
+        "darwin-arm64": "jq-1.7-darwin-arm64.tar.gz",
+        "darwin-x64": "jq-1.7-darwin-x64.tar.gz"
+      }
+    },
+    "yq": {
+      "id": "yq",
+      "name": "yq",
+      "version": "4.40",
+      "category": "tool",
+      "description": "YAML processor (like jq but for YAML)",
+      "bundled": false,
+      "binary": "yq/yq",
+      "download": {
+        "darwin-arm64": "yq-4.40-darwin-arm64.tar.gz",
+        "darwin-x64": "yq-4.40-darwin-x64.tar.gz"
+      }
+    },
+    "sqlite": {
+      "id": "sqlite",
+      "name": "SQLite",
+      "version": "3.44",
+      "category": "tool",
+      "description": "Lightweight database for local data storage",
+      "bundled": false,
+      "binary": "sqlite/sqlite3",
+      "download": {
+        "darwin-arm64": "sqlite-3.44-darwin-arm64.tar.gz",
+        "darwin-x64": "sqlite-3.44-darwin-x64.tar.gz"
+      }
+    },
+    "psql": {
+      "id": "psql",
+      "name": "PostgreSQL Client",
+      "version": "16",
+      "category": "tool",
+      "description": "PostgreSQL client for database connections",
+      "managed": false,
+      "checkCommand": "psql --version",
+      "instructions": "Install via Homebrew: brew install libpq && brew link libpq --force"
+    },
+    "httpie": {
+      "id": "httpie",
+      "name": "HTTPie",
+      "version": "3.2",
+      "category": "tool",
+      "description": "Modern HTTP client for API testing",
+      "managed": false,
+      "checkCommand": "http --version",
+      "instructions": "Install via Homebrew: brew install httpie"
+    },
+    "tesseract": {
+      "id": "tesseract",
+      "name": "Tesseract OCR",
+      "version": "5.3",
+      "category": "tool",
+      "description": "OCR text extraction from images",
+      "managed": false,
+      "checkCommand": "tesseract --version",
+      "instructions": "Install via Homebrew: brew install tesseract"
+    },
+    "ytdlp": {
+      "id": "ytdlp",
+      "name": "yt-dlp",
+      "version": "2024.01",
+      "category": "tool",
+      "description": "Video downloader for YouTube and other sites",
+      "bundled": false,
+      "binary": "ytdlp/yt-dlp",
+      "download": {
+        "darwin-arm64": "ytdlp-2024.01-darwin-arm64.tar.gz",
+        "darwin-x64": "ytdlp-2024.01-darwin-x64.tar.gz"
+      }
+    },
+    "supabase": {
+      "id": "supabase",
+      "name": "Supabase CLI",
+      "version": "latest",
+      "category": "cloud",
+      "description": "Supabase local development and deployment",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "supabase",
+      "binary": "tools/supabase/node_modules/.bin/supabase",
+      "installDir": "tools/supabase",
+      "requiresAuth": false,
+      "authInstructions": "Run 'supabase login' to authenticate"
+    },
+    "vercel": {
+      "id": "vercel",
+      "name": "Vercel CLI",
+      "version": "latest",
+      "category": "cloud",
+      "description": "Deploy to Vercel",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "vercel",
+      "binary": "tools/vercel/node_modules/.bin/vercel",
+      "installDir": "tools/vercel",
+      "requiresAuth": true,
+      "authInstructions": "Run 'vercel login' to authenticate"
+    },
+    "netlify": {
+      "id": "netlify",
+      "name": "Netlify CLI",
+      "version": "latest",
+      "category": "cloud",
+      "description": "Deploy to Netlify",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "netlify-cli",
+      "binary": "tools/netlify/node_modules/.bin/netlify",
+      "installDir": "tools/netlify",
+      "requiresAuth": true,
+      "authInstructions": "Run 'netlify login' to authenticate"
+    },
+    "wrangler": {
+      "id": "wrangler",
+      "name": "Cloudflare Wrangler",
+      "version": "latest",
+      "category": "cloud",
+      "description": "Deploy to Cloudflare Workers/Pages",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "wrangler",
+      "binary": "tools/wrangler/node_modules/.bin/wrangler",
+      "installDir": "tools/wrangler",
+      "requiresAuth": true,
+      "authInstructions": "Run 'wrangler login' to authenticate"
+    },
+    "railway": {
+      "id": "railway",
+      "name": "Railway CLI",
+      "version": "latest",
+      "category": "cloud",
+      "description": "Deploy to Railway (simple cloud hosting)",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "@railway/cli",
+      "binary": "tools/railway/node_modules/.bin/railway",
+      "installDir": "tools/railway",
+      "requiresAuth": true,
+      "authInstructions": "Run 'railway login' to authenticate"
+    },
+    "flyio": {
+      "id": "flyio",
+      "name": "Fly.io CLI",
+      "version": "latest",
+      "category": "cloud",
+      "description": "Deploy to Fly.io (edge hosting)",
+      "bundled": false,
+      "installType": "npm",
+      "npmPackage": "flyctl",
+      "binary": "tools/flyio/node_modules/.bin/flyctl",
+      "installDir": "tools/flyio",
+      "requiresAuth": true,
+      "authInstructions": "Run 'fly auth login' to authenticate"
+    },
+    "docker": {
+      "id": "docker",
+      "name": "Docker",
+      "category": "system",
+      "description": "Container runtime",
+      "managed": false,
+      "checkCommand": "docker --version",
+      "instructions": "Docker is not installed.\n\nTo install Docker:\n  1. Download Docker Desktop: https://docker.com/download\n  2. Install and start Docker Desktop\n\nOr install via Homebrew:\n  brew install --cask docker"
+    },
+    "rclone": {
+      "id": "rclone",
+      "name": "rclone",
+      "version": "1.68",
+      "category": "tool",
+      "description": "Cloud storage CLI (Google Drive, S3, Dropbox, 40+ providers)",
+      "bundled": false,
+      "binary": "rclone/rclone",
+      "download": {
+        "darwin-arm64": "rclone-1.68-darwin-arm64.tar.gz",
+        "darwin-x64": "rclone-1.68-darwin-x64.tar.gz"
+      },
+      "requiresAuth": true,
+      "authInstructions": "Run 'rclone config' to set up cloud storage providers"
+    }
+  }
+}
